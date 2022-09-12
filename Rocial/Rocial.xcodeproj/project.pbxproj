@@ -25,6 +25,7 @@
 		02539B8828CFB0A300DAE5C0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 02539B8728CFB0A300DAE5C0 /* FirebaseAuth */; };
 		02539B8A28CFB0A300DAE5C0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 02539B8928CFB0A300DAE5C0 /* FirebaseFirestore */; };
 		02539B8C28CFB0A300DAE5C0 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 02539B8B28CFB0A300DAE5C0 /* FirebaseFirestoreSwift */; };
+		02E7010228CFDCF70015DE2F /* PostRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E7010128CFDCF70015DE2F /* PostRowViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		02539B7E28CFAE9F00DAE5C0 /* AlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertError.swift; sourceTree = "<group>"; };
 		02539B8028CFAECE00DAE5C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02539B8228CFAEF100DAE5C0 /* PostsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRepository.swift; sourceTree = "<group>"; };
+		02E7010128CFDCF70015DE2F /* PostRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				02539B7828CFAE0200DAE5C0 /* PostsViewModel.swift */,
+				02E7010128CFDCF70015DE2F /* PostRowViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				02539B7328CFADC500DAE5C0 /* NewPostForm.swift in Sources */,
 				02539B8328CFAEF100DAE5C0 /* PostsRepository.swift in Sources */,
 				02539B7728CFADEA00DAE5C0 /* PostsList.swift in Sources */,
+				02E7010228CFDCF70015DE2F /* PostRowViewModel.swift in Sources */,
 				02539B7128CFADAD00DAE5C0 /* Post.swift in Sources */,
 				02539B7528CFADD000DAE5C0 /* PostRow.swift in Sources */,
 				02539B5C28CFA5BE00DAE5C0 /* ContentView.swift in Sources */,
@@ -397,7 +401,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Rocial/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Rocial/Resources/Preview\\ Content";
 				DEVELOPMENT_TEAM = 6346F46FVY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -427,7 +431,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Rocial/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Rocial/Resources/Preview\\ Content";
 				DEVELOPMENT_TEAM = 6346F46FVY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
