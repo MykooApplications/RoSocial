@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0212C5A928D26F8B006CEDB5 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0212C5A828D26F8B006CEDB5 /* MainTabView.swift */; };
+		0212C5AC28D2823C006CEDB5 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0212C5AB28D2823C006CEDB5 /* AuthService.swift */; };
+		0212C5AE28D2883F006CEDB5 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0212C5AD28D2883F006CEDB5 /* AuthViewModel.swift */; };
+		0212C5B028D288C3006CEDB5 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0212C5AF28D288C3006CEDB5 /* AuthView.swift */; };
+		0212C5B228D28B49006CEDB5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0212C5B128D28B49006CEDB5 /* ProfileView.swift */; };
 		02539B5A28CFA5BE00DAE5C0 /* RocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02539B5928CFA5BE00DAE5C0 /* RocialApp.swift */; };
 		02539B5C28CFA5BE00DAE5C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02539B5B28CFA5BE00DAE5C0 /* ContentView.swift */; };
 		02539B5E28CFA5C000DAE5C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02539B5D28CFA5C000DAE5C0 /* Assets.xcassets */; };
@@ -31,6 +35,10 @@
 
 /* Begin PBXFileReference section */
 		0212C5A828D26F8B006CEDB5 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		0212C5AB28D2823C006CEDB5 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		0212C5AD28D2883F006CEDB5 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		0212C5AF28D288C3006CEDB5 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		0212C5B128D28B49006CEDB5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		02539B5628CFA5BE00DAE5C0 /* Rocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02539B5928CFA5BE00DAE5C0 /* RocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocialApp.swift; sourceTree = "<group>"; };
 		02539B5B28CFA5BE00DAE5C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,6 +72,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0212C5AA28D2820E006CEDB5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0212C5AB28D2823C006CEDB5 /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		02539B4D28CFA5BE00DAE5C0 = {
 			isa = PBXGroup;
 			children = (
@@ -86,10 +102,11 @@
 				02539B6828CFAA4700DAE5C0 /* Models */,
 				02539B6F28CFABAB00DAE5C0 /* Views */,
 				02539B6E28CFABA000DAE5C0 /* View Models */,
-				02539B6D28CFAB9300DAE5C0 /* Utilites */,
-				02539B6C28CFAA7F00DAE5C0 /* Supporting Views */,
-				02539B6B28CFAA7100DAE5C0 /* Resources */,
 				02539B6A28CFAA5B00DAE5C0 /* Repositories */,
+				02539B6C28CFAA7F00DAE5C0 /* Supporting Views */,
+				02539B6D28CFAB9300DAE5C0 /* Utilites */,
+				0212C5AA28D2820E006CEDB5 /* Services */,
+				02539B6B28CFAA7100DAE5C0 /* Resources */,
 				02539B6928CFAA5100DAE5C0 /* Products */,
 				02539B6728CFAA3700DAE5C0 /* Frameworks */,
 				02539B5928CFA5BE00DAE5C0 /* RocialApp.swift */,
@@ -168,6 +185,7 @@
 			children = (
 				02539B7828CFAE0200DAE5C0 /* PostsViewModel.swift */,
 				02E7010128CFDCF70015DE2F /* PostRowViewModel.swift */,
+				0212C5AD28D2883F006CEDB5 /* AuthViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -179,6 +197,8 @@
 				02539B7428CFADD000DAE5C0 /* PostRow.swift */,
 				02539B7628CFADEA00DAE5C0 /* PostsList.swift */,
 				0212C5A828D26F8B006CEDB5 /* MainTabView.swift */,
+				0212C5AF28D288C3006CEDB5 /* AuthView.swift */,
+				0212C5B128D28B49006CEDB5 /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -268,14 +288,18 @@
 				02539B7728CFADEA00DAE5C0 /* PostsList.swift in Sources */,
 				02E7010228CFDCF70015DE2F /* PostRowViewModel.swift in Sources */,
 				0212C5A928D26F8B006CEDB5 /* MainTabView.swift in Sources */,
+				0212C5AE28D2883F006CEDB5 /* AuthViewModel.swift in Sources */,
+				0212C5B028D288C3006CEDB5 /* AuthView.swift in Sources */,
 				02539B7128CFADAD00DAE5C0 /* Post.swift in Sources */,
 				02539B7528CFADD000DAE5C0 /* PostRow.swift in Sources */,
+				0212C5B228D28B49006CEDB5 /* ProfileView.swift in Sources */,
 				02539B5C28CFA5BE00DAE5C0 /* ContentView.swift in Sources */,
 				02539B7F28CFAE9F00DAE5C0 /* AlertError.swift in Sources */,
 				02539B7B28CFAE4500DAE5C0 /* Loadable.swift in Sources */,
 				02539B5A28CFA5BE00DAE5C0 /* RocialApp.swift in Sources */,
 				02539B7928CFAE0200DAE5C0 /* PostsViewModel.swift in Sources */,
 				02539B7D28CFAE6100DAE5C0 /* EmptyListView.swift in Sources */,
+				0212C5AC28D2823C006CEDB5 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

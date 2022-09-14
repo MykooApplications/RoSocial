@@ -16,7 +16,7 @@ struct RocialApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainTabView()
+            AuthView()
         }
     }
 }
