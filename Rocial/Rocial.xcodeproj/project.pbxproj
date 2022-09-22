@@ -12,6 +12,8 @@
 		0212C5AE28D2883F006CEDB5 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0212C5AD28D2883F006CEDB5 /* AuthViewModel.swift */; };
 		0212C5B028D288C3006CEDB5 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0212C5AF28D288C3006CEDB5 /* AuthView.swift */; };
 		0212C5B228D28B49006CEDB5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0212C5B128D28B49006CEDB5 /* ProfileView.swift */; };
+		0232F47628D8EA97004232AA /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0232F47528D8EA96004232AA /* FormViewModel.swift */; };
+		0232F47828D942B8004232AA /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0232F47728D942B8004232AA /* PrimaryButtonStyle.swift */; };
 		02539B5A28CFA5BE00DAE5C0 /* RocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02539B5928CFA5BE00DAE5C0 /* RocialApp.swift */; };
 		02539B5C28CFA5BE00DAE5C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02539B5B28CFA5BE00DAE5C0 /* ContentView.swift */; };
 		02539B5E28CFA5C000DAE5C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02539B5D28CFA5C000DAE5C0 /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 		02539B8828CFB0A300DAE5C0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 02539B8728CFB0A300DAE5C0 /* FirebaseAuth */; };
 		02539B8A28CFB0A300DAE5C0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 02539B8928CFB0A300DAE5C0 /* FirebaseFirestore */; };
 		02539B8C28CFB0A300DAE5C0 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 02539B8B28CFB0A300DAE5C0 /* FirebaseFirestoreSwift */; };
+		0267B67828DA3A5A0001E394 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0267B67728DA3A5A0001E394 /* User.swift */; };
+		0267B67A28DA3DB10001E394 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0267B67928DA3DB10001E394 /* ViewModelFactory.swift */; };
 		02E7010228CFDCF70015DE2F /* PostRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E7010128CFDCF70015DE2F /* PostRowViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +43,8 @@
 		0212C5AD28D2883F006CEDB5 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		0212C5AF28D288C3006CEDB5 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		0212C5B128D28B49006CEDB5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		0232F47528D8EA96004232AA /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
+		0232F47728D942B8004232AA /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		02539B5628CFA5BE00DAE5C0 /* Rocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02539B5928CFA5BE00DAE5C0 /* RocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocialApp.swift; sourceTree = "<group>"; };
 		02539B5B28CFA5BE00DAE5C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -54,6 +60,8 @@
 		02539B7E28CFAE9F00DAE5C0 /* AlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertError.swift; sourceTree = "<group>"; };
 		02539B8028CFAECE00DAE5C0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		02539B8228CFAEF100DAE5C0 /* PostsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRepository.swift; sourceTree = "<group>"; };
+		0267B67728DA3A5A0001E394 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0267B67928DA3DB10001E394 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		02E7010128CFDCF70015DE2F /* PostRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				02539B7028CFADAD00DAE5C0 /* Post.swift */,
+				0267B67728DA3A5A0001E394 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,6 +177,7 @@
 			children = (
 				02539B7C28CFAE6100DAE5C0 /* EmptyListView.swift */,
 				02539B7E28CFAE9F00DAE5C0 /* AlertError.swift */,
+				0232F47728D942B8004232AA /* PrimaryButtonStyle.swift */,
 			);
 			path = "Supporting Views";
 			sourceTree = "<group>";
@@ -186,6 +196,8 @@
 				02539B7828CFAE0200DAE5C0 /* PostsViewModel.swift */,
 				02E7010128CFDCF70015DE2F /* PostRowViewModel.swift */,
 				0212C5AD28D2883F006CEDB5 /* AuthViewModel.swift */,
+				0232F47528D8EA96004232AA /* FormViewModel.swift */,
+				0267B67928DA3DB10001E394 /* ViewModelFactory.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -289,12 +301,16 @@
 				02E7010228CFDCF70015DE2F /* PostRowViewModel.swift in Sources */,
 				0212C5A928D26F8B006CEDB5 /* MainTabView.swift in Sources */,
 				0212C5AE28D2883F006CEDB5 /* AuthViewModel.swift in Sources */,
+				0267B67A28DA3DB10001E394 /* ViewModelFactory.swift in Sources */,
 				0212C5B028D288C3006CEDB5 /* AuthView.swift in Sources */,
 				02539B7128CFADAD00DAE5C0 /* Post.swift in Sources */,
+				0267B67828DA3A5A0001E394 /* User.swift in Sources */,
 				02539B7528CFADD000DAE5C0 /* PostRow.swift in Sources */,
 				0212C5B228D28B49006CEDB5 /* ProfileView.swift in Sources */,
 				02539B5C28CFA5BE00DAE5C0 /* ContentView.swift in Sources */,
 				02539B7F28CFAE9F00DAE5C0 /* AlertError.swift in Sources */,
+				0232F47628D8EA97004232AA /* FormViewModel.swift in Sources */,
+				0232F47828D942B8004232AA /* PrimaryButtonStyle.swift in Sources */,
 				02539B7B28CFAE4500DAE5C0 /* Loadable.swift in Sources */,
 				02539B5A28CFA5BE00DAE5C0 /* RocialApp.swift in Sources */,
 				02539B7928CFAE0200DAE5C0 /* PostsViewModel.swift in Sources */,
