@@ -25,7 +25,6 @@ struct CommentsRepository: CommentsRepositoryProtocol {
             .getDocuments(as: Comment.self)
     }
     
-    
     func create(_ comment: Comment) async throws {
         let document = commentsReference.document(comment.id.uuidString)
         try await document.setData(from: comment)

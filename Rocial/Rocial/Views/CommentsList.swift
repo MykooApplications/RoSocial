@@ -12,38 +12,36 @@ import SwiftUI
 struct CommentsList: View {
     @StateObject var viewModel: CommentsViewModel
     
-    
-    
     var body: some View {
         Group {
-                 switch viewModel.comments {
-                 case .loading:
-                     ProgressView()
-                         .onAppear {
-                             viewModel.fetchComments()
-                         }
-                 case let .error(error):
-                     EmptyListView(
-                         title: "Cannot Load Comments",
-                         message: error.localizedDescription,
-                         retryAction: {
-                             viewModel.fetchComments()
-                         }
-                     )
-                 case .empty:
-                     EmptyListView(
-                         title: "No Comments",
-                         message: "Be the first to leave a comment."
-                     )
-                 case let .loaded(comments):
-                     List(comments) { comment in
-                         // ...
-                     }
-                     .animation(.default, value: comments)
-                 }
-             }
-             .navigationTitle("Comments")
-             .navigationBarTitleDisplayMode(.inline)
+            switch viewModel.comments {
+            case .loading:
+                ProgressView()
+                    .onAppear {
+                        viewModel.fetchComments()
+                    }
+            case let .error(error):
+                EmptyListView(
+                    title: "Cannot Load Comments",
+                    message: error.localizedDescription,
+                    retryAction: {
+                        viewModel.fetchComments()
+                    }
+                )
+            case .empty:
+                EmptyListView(
+                    title: "No Comments",
+                    message: "Be the first to leave a comment."
+                )
+            case let .loaded(comments):
+                List(comments) { comment in
+                    CommentRow(viewModel: viewModel.makeCommentRowViewModel(for: comment))
+                }
+                .animation(.default, value: comments)
+            }
+        }
+        .navigationTitle("Comments")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -55,10 +53,10 @@ struct CommentsList_Previews: PreviewProvider {
         ListPreview(state: .error)
         ListPreview(state: .loading)
     }
- 
+    
     private struct ListPreview: View {
         let state: Loadable<[Comment]>
- 
+        
         var body: some View {
             NavigationView {
                 CommentsList(viewModel: CommentsViewModel(commentsRepository: CommentsRepositoryStub(state: state)))
@@ -67,3 +65,4 @@ struct CommentsList_Previews: PreviewProvider {
     }
 }
 #endif
+

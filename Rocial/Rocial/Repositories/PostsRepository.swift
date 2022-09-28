@@ -70,16 +70,16 @@ struct PostsRepository: PostsRepositoryProtocol {
     }
     
     func fetchFavoritePosts() async throws -> [Post] {
-        let favorites = try await fetchFavorites()
-        guard !favorites.isEmpty else { return [] }
-        return try await postsReference
-            .whereField("id", in: favorites.map(\.uuidString))
-            .order(by: "timestamp", descending: true)
-            .getDocuments(as: Post.self)
-            .map { post in
-                post.setting(\.isFavorite, to: true)
-            }
-    }
+           let favorites = try await fetchFavorites()
+           guard !favorites.isEmpty else { return [] }
+           return try await postsReference
+               .whereField("id", in: favorites.map(\.uuidString))
+               .order(by: "timestamp", descending: true)
+               .getDocuments(as: Post.self)
+               .map { post in
+                   post.setting(\.isFavorite, to: true)
+               }
+       }
     
     func create(_ post: Post) async throws {
         let document = postsReference.document(post.id.uuidString)
@@ -107,17 +107,21 @@ struct PostsRepository: PostsRepositoryProtocol {
 
 private extension PostsRepository {
     func fetchPosts(from query: Query) async throws -> [Post] {
-        return try await query
-            .order(by: "timestamp", descending: true)
-            .getDocuments(as: Post.self)
-    }
-    
-    func fetchFavorites() async throws -> [Post.ID] {
-        return try await favoritesReference
-            .whereField("userID", isEqualTo: user.id)
-            .getDocuments(as: Favorite.self)
-            .map(\.postID)
-    }
+            let (posts, favorites) = try await (
+                query.order(by: "timestamp", descending: true).getDocuments(as: Post.self),
+                fetchFavorites()
+            )
+            return posts.map { post in
+                post.setting(\.isFavorite, to: favorites.contains(post.id))
+            }
+        }
+        
+        func fetchFavorites() async throws -> [Post.ID] {
+            return try await favoritesReference
+                .whereField("userID", isEqualTo: user.id)
+                .getDocuments(as: Favorite.self)
+                .map(\.postID)
+        }
     
     struct Favorite: Identifiable, Codable {
         var id: String {

@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-private extension DocumentReference {
+extension DocumentReference {
     func setData<T: Encodable>(from value: T) async throws {
         return try await withCheckedThrowingContinuation { continuation in
             // Method only throws if there’s an encoding error, which indicates a problem with our model.
@@ -25,7 +25,7 @@ private extension DocumentReference {
     }
 }
 
-private extension Query {
+extension Query {
     func getDocuments<T: Decodable>(as type: T.Type) async throws -> [T] {
         let snapshot = try await getDocuments()
         return snapshot.documents.compactMap { document in

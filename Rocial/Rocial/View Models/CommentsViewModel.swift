@@ -12,7 +12,6 @@ import Foundation
 
 class CommentsViewModel: ObservableObject {
     @Published var comments: Loadable<[Comment]> = .loading
-    
     private let commentsRepository: CommentsRepositoryProtocol
     
     init(commentsRepository: CommentsRepositoryProtocol) {
@@ -29,4 +28,17 @@ class CommentsViewModel: ObservableObject {
             }
         }
     }
+    
+    func makeCommentRowViewModel(for comment: Comment) -> CommentRowViewModel {
+        let deleteAction = { [weak self] in
+            try await self?.commentsRepository.delete(comment)
+            self?.comments.value?.removeAll { $0.id == comment.id }
+        }
+        return CommentRowViewModel(
+            comment: comment,
+            deleteAction: commentsRepository.canDelete(comment) ? deleteAction : nil
+        )
+    }
+    
+ 
 }

@@ -14,6 +14,9 @@
 		0212C5B228D28B49006CEDB5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0212C5B128D28B49006CEDB5 /* ProfileView.swift */; };
 		0232F47628D8EA97004232AA /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0232F47528D8EA96004232AA /* FormViewModel.swift */; };
 		0232F47828D942B8004232AA /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0232F47728D942B8004232AA /* PrimaryButtonStyle.swift */; };
+		0248659528E4966500A741FC /* CommentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0248659428E4966500A741FC /* CommentRow.swift */; };
+		0248659728E4A6A700A741FC /* CommentRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0248659628E4A6A700A741FC /* CommentRowViewModel.swift */; };
+		0248659A28E4AF9300A741FC /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0248659928E4AF9300A741FC /* ErrorHandler.swift */; };
 		02539B5A28CFA5BE00DAE5C0 /* RocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02539B5928CFA5BE00DAE5C0 /* RocialApp.swift */; };
 		02539B5C28CFA5BE00DAE5C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02539B5B28CFA5BE00DAE5C0 /* ContentView.swift */; };
 		02539B5E28CFA5C000DAE5C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02539B5D28CFA5C000DAE5C0 /* Assets.xcassets */; };
@@ -50,6 +53,9 @@
 		0212C5B128D28B49006CEDB5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0232F47528D8EA96004232AA /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
 		0232F47728D942B8004232AA /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
+		0248659428E4966500A741FC /* CommentRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRow.swift; sourceTree = "<group>"; };
+		0248659628E4A6A700A741FC /* CommentRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRowViewModel.swift; sourceTree = "<group>"; };
+		0248659928E4AF9300A741FC /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		02539B5628CFA5BE00DAE5C0 /* Rocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02539B5928CFA5BE00DAE5C0 /* RocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocialApp.swift; sourceTree = "<group>"; };
 		02539B5B28CFA5BE00DAE5C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -199,6 +205,7 @@
 			children = (
 				02539B7A28CFAE4500DAE5C0 /* Loadable.swift */,
 				02F8FBEE28E3B83C006D9A3B /* Firestore+Extensions.swift */,
+				0248659928E4AF9300A741FC /* ErrorHandler.swift */,
 			);
 			path = Utilites;
 			sourceTree = "<group>";
@@ -212,6 +219,7 @@
 				0232F47528D8EA96004232AA /* FormViewModel.swift */,
 				0267B67928DA3DB10001E394 /* ViewModelFactory.swift */,
 				02F8FBF028E3D82A006D9A3B /* CommentsViewModel.swift */,
+				0248659628E4A6A700A741FC /* CommentRowViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -226,6 +234,7 @@
 				0212C5AF28D288C3006CEDB5 /* AuthView.swift */,
 				0212C5B128D28B49006CEDB5 /* ProfileView.swift */,
 				02F8FBF228E3D9AC006D9A3B /* CommentsList.swift */,
+				0248659428E4966500A741FC /* CommentRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -325,9 +334,11 @@
 				02F8FBED28E3B4C1006D9A3B /* CommentsRepository.swift in Sources */,
 				0267B67828DA3A5A0001E394 /* User.swift in Sources */,
 				02539B7528CFADD000DAE5C0 /* PostRow.swift in Sources */,
+				0248659728E4A6A700A741FC /* CommentRowViewModel.swift in Sources */,
 				0212C5B228D28B49006CEDB5 /* ProfileView.swift in Sources */,
 				02539B5C28CFA5BE00DAE5C0 /* ContentView.swift in Sources */,
 				02539B7F28CFAE9F00DAE5C0 /* AlertError.swift in Sources */,
+				0248659A28E4AF9300A741FC /* ErrorHandler.swift in Sources */,
 				0232F47628D8EA97004232AA /* FormViewModel.swift in Sources */,
 				0232F47828D942B8004232AA /* PrimaryButtonStyle.swift in Sources */,
 				02539B7B28CFAE4500DAE5C0 /* Loadable.swift in Sources */,
@@ -336,6 +347,7 @@
 				02539B7928CFAE0200DAE5C0 /* PostsViewModel.swift in Sources */,
 				02539B7D28CFAE6100DAE5C0 /* EmptyListView.swift in Sources */,
 				0212C5AC28D2823C006CEDB5 /* AuthService.swift in Sources */,
+				0248659528E4966500A741FC /* CommentRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
