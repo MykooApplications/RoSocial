@@ -11,11 +11,6 @@ struct NewPostForm: View {
     @StateObject var viewModel: FormViewModel<Post>
     @Environment(\.dismiss) private var dismiss
     
-//    typealias CreateAction = (Post) async throws -> Void
-//    let createAction: CreateAction
-//    @State private var state = FormState.idle
-//    @State private var post = Post(title:"", content:"", authorName: "")
-    
     var body: some View {
         NavigationView {
             Form {

@@ -93,7 +93,6 @@ struct PostsList_Previews: PreviewProvider {
             let viewModel = PostsViewModel(postsRepository: postsRepository)
             NavigationView {
                 PostsList(viewModel: viewModel)
-                    .environmentObject(ViewModelFactory.preview)
             }
         }
     }

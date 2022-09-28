@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Post: Identifiable, Equatable, Codable {
+struct Post: Identifiable, Equatable {
     var title: String
     var content: String
     var author: User
@@ -24,6 +24,12 @@ struct Post: Identifiable, Equatable, Codable {
     }
 }
 
+extension Post: Codable {
+    enum CodingKeys: CodingKey {
+        case title, content, author, timestamp, id
+    }
+}
+
 extension Post {
     static let testPost = Post(
         title: "Lorem ipsum",
@@ -31,3 +37,13 @@ extension Post {
         author: User.testUser
     )
 }
+
+private extension Post {
+    func setting<T>(_ property: WritableKeyPath<Post, T>, to newValue: T) -> Post
+    {
+        var post = self
+        post[keyPath: property] = newValue
+        return post
+    }
+}
+

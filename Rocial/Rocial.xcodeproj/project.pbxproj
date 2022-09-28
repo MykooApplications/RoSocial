@@ -35,6 +35,11 @@
 		0267B67828DA3A5A0001E394 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0267B67728DA3A5A0001E394 /* User.swift */; };
 		0267B67A28DA3DB10001E394 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0267B67928DA3DB10001E394 /* ViewModelFactory.swift */; };
 		02E7010228CFDCF70015DE2F /* PostRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E7010128CFDCF70015DE2F /* PostRowViewModel.swift */; };
+		02F8FBEB28E3B40A006D9A3B /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8FBEA28E3B40A006D9A3B /* Comment.swift */; };
+		02F8FBED28E3B4C1006D9A3B /* CommentsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8FBEC28E3B4C1006D9A3B /* CommentsRepository.swift */; };
+		02F8FBEF28E3B83C006D9A3B /* Firestore+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8FBEE28E3B83C006D9A3B /* Firestore+Extensions.swift */; };
+		02F8FBF128E3D82B006D9A3B /* CommentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8FBF028E3D82A006D9A3B /* CommentsViewModel.swift */; };
+		02F8FBF328E3D9AC006D9A3B /* CommentsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F8FBF228E3D9AC006D9A3B /* CommentsList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +68,11 @@
 		0267B67728DA3A5A0001E394 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0267B67928DA3DB10001E394 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		02E7010128CFDCF70015DE2F /* PostRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowViewModel.swift; sourceTree = "<group>"; };
+		02F8FBEA28E3B40A006D9A3B /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		02F8FBEC28E3B4C1006D9A3B /* CommentsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsRepository.swift; sourceTree = "<group>"; };
+		02F8FBEE28E3B83C006D9A3B /* Firestore+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore+Extensions.swift"; sourceTree = "<group>"; };
+		02F8FBF028E3D82A006D9A3B /* CommentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewModel.swift; sourceTree = "<group>"; };
+		02F8FBF228E3D9AC006D9A3B /* CommentsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +153,7 @@
 			children = (
 				02539B7028CFADAD00DAE5C0 /* Post.swift */,
 				0267B67728DA3A5A0001E394 /* User.swift */,
+				02F8FBEA28E3B40A006D9A3B /* Comment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -158,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				02539B8228CFAEF100DAE5C0 /* PostsRepository.swift */,
+				02F8FBEC28E3B4C1006D9A3B /* CommentsRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -186,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				02539B7A28CFAE4500DAE5C0 /* Loadable.swift */,
+				02F8FBEE28E3B83C006D9A3B /* Firestore+Extensions.swift */,
 			);
 			path = Utilites;
 			sourceTree = "<group>";
@@ -198,6 +211,7 @@
 				0212C5AD28D2883F006CEDB5 /* AuthViewModel.swift */,
 				0232F47528D8EA96004232AA /* FormViewModel.swift */,
 				0267B67928DA3DB10001E394 /* ViewModelFactory.swift */,
+				02F8FBF028E3D82A006D9A3B /* CommentsViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -211,6 +225,7 @@
 				0212C5A828D26F8B006CEDB5 /* MainTabView.swift */,
 				0212C5AF28D288C3006CEDB5 /* AuthView.swift */,
 				0212C5B128D28B49006CEDB5 /* ProfileView.swift */,
+				02F8FBF228E3D9AC006D9A3B /* CommentsList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,12 +313,16 @@
 				02539B7328CFADC500DAE5C0 /* NewPostForm.swift in Sources */,
 				02539B8328CFAEF100DAE5C0 /* PostsRepository.swift in Sources */,
 				02539B7728CFADEA00DAE5C0 /* PostsList.swift in Sources */,
+				02F8FBEF28E3B83C006D9A3B /* Firestore+Extensions.swift in Sources */,
 				02E7010228CFDCF70015DE2F /* PostRowViewModel.swift in Sources */,
 				0212C5A928D26F8B006CEDB5 /* MainTabView.swift in Sources */,
 				0212C5AE28D2883F006CEDB5 /* AuthViewModel.swift in Sources */,
 				0267B67A28DA3DB10001E394 /* ViewModelFactory.swift in Sources */,
 				0212C5B028D288C3006CEDB5 /* AuthView.swift in Sources */,
 				02539B7128CFADAD00DAE5C0 /* Post.swift in Sources */,
+				02F8FBEB28E3B40A006D9A3B /* Comment.swift in Sources */,
+				02F8FBF328E3D9AC006D9A3B /* CommentsList.swift in Sources */,
+				02F8FBED28E3B4C1006D9A3B /* CommentsRepository.swift in Sources */,
 				0267B67828DA3A5A0001E394 /* User.swift in Sources */,
 				02539B7528CFADD000DAE5C0 /* PostRow.swift in Sources */,
 				0212C5B228D28B49006CEDB5 /* ProfileView.swift in Sources */,
@@ -312,6 +331,7 @@
 				0232F47628D8EA97004232AA /* FormViewModel.swift in Sources */,
 				0232F47828D942B8004232AA /* PrimaryButtonStyle.swift in Sources */,
 				02539B7B28CFAE4500DAE5C0 /* Loadable.swift in Sources */,
+				02F8FBF128E3D82B006D9A3B /* CommentsViewModel.swift in Sources */,
 				02539B5A28CFA5BE00DAE5C0 /* RocialApp.swift in Sources */,
 				02539B7928CFAE0200DAE5C0 /* PostsViewModel.swift in Sources */,
 				02539B7D28CFAE6100DAE5C0 /* EmptyListView.swift in Sources */,
