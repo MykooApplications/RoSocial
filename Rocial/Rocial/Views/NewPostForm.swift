@@ -17,6 +17,7 @@ struct NewPostForm: View {
                 Section {
                     TextField("Title", text: $viewModel.title)
                 }
+                ImageSection(imageURL: $viewModel.imageURL)
                 Section("Content") {
                     TextEditor(text: $viewModel.content)
                         .multilineTextAlignment(.leading)
@@ -44,9 +45,8 @@ struct NewPostForm: View {
         .alert("Cannot create post", error: $viewModel.error)
         .disabled(viewModel.isWorking)
     }
-    
- 
 }
+
 enum FormState {
     case idle, working, error
     var isError: Bool {
@@ -59,6 +59,29 @@ enum FormState {
         }
     }
 }
+
+private extension NewPostForm {
+    struct ImageSection: View {
+        @Binding var imageURL: URL?
+        
+        var body: some View {
+            Section("Image") {
+                AsyncImage(url: imageURL) { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                } placeholder: {
+                    EmptyView()
+                }
+                ImagePickerButton(imageURL: $imageURL) {
+                    Label("Choose Image", systemImage: "photo.fill")
+                }
+            }
+        }
+    }
+}
+
 
 struct NewPostForm_Previews: PreviewProvider {
     static var previews: some View {

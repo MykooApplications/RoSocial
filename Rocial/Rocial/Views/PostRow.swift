@@ -11,16 +11,19 @@ struct PostRow: View {
     @ObservedObject var viewModel: PostRowViewModel
     @EnvironmentObject private var factory: ViewModelFactory
     @State private var showConfirmationDialog = false
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
+                
                 AuthorView(author: viewModel.author)
                 Spacer()
                 Text(viewModel.timestamp.formatted(date: .abbreviated, time: .omitted))
                     .font(.caption)
             }
             .foregroundColor(.gray)
+            if let imageURL = viewModel.imageURL {
+                PostImage(url: imageURL)
+            }
             Text(viewModel.title)
                 .font(.title3)
                 .fontWeight(.semibold)
@@ -56,8 +59,6 @@ struct PostRow: View {
     }
 }
 
-// MARK: - AuthorView
-
 private extension PostRow {
     struct AuthorView: View {
         let author: User
@@ -68,15 +69,20 @@ private extension PostRow {
             NavigationLink {
                 PostsList(viewModel: factory.makePostsViewModel(filter: .author(author)))
             } label: {
-                Text(author.name)
-                    .font(.subheadline)
-                    .fontWeight(.medium)
+                HStack {
+                let _ = print("[PostRow] profileImage url = \(author.profileImageURL)")
+                    ProfileImage(url: author.profileImageURL)
+                        .frame(width: 40, height: 40)
+                    Text(author.name)
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                    
+                }
             }
         }
+       
     }
 }
-
-// MARK: - FavoriteButton
 
 private extension PostRow {
     struct FavoriteButton: View {
@@ -97,7 +103,23 @@ private extension PostRow {
     }
 }
 
-// MARK: - Preview
+private extension PostRow {
+    struct PostImage: View {
+        let url: URL
+        
+        var body: some View {
+            AsyncImage(url: url) { image in
+                image
+                    .resizable()
+                    .scaledToFit()
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+            } placeholder: {
+                Color.clear
+            }
+        }
+    }
+}
+
 
 struct PostRow_Previews: PreviewProvider {
     static var previews: some View {

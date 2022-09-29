@@ -27,35 +27,6 @@ extension PostsRepositoryProtocol {
     }
 }
 
-
-#if DEBUG
-struct PostsRepositoryStub: PostsRepositoryProtocol {
-    let state: Loadable<[Post]>
-    let user = User.testUser
-    
-    func fetchAllPosts() async throws -> [Post] {
-        return try await state.simulate()
-    }
-    
-    func fetchPosts(by author: User) async throws -> [Post] {
-        return try await state.simulate()
-    }
-    
-    func fetchFavoritePosts() async throws -> [Post] {
-        return try await state.simulate()
-    }
-    
-    func create(_ post: Post) async throws {}
-    
-    func delete(_ post: Post) async throws {}
-    
-    func favorite(_ post: Post) async throws {}
-    
-    func unfavorite(_ post: Post) async throws {}
-}
-#endif
-
-
 struct PostsRepository: PostsRepositoryProtocol {
     let user: User
     let postsReference = Firestore.firestore().collection("posts_v2")
@@ -82,6 +53,14 @@ struct PostsRepository: PostsRepositoryProtocol {
        }
     
     func create(_ post: Post) async throws {
+        var post = post
+        if let imageFileURL = post.imageURL {
+            post.imageURL = try await StorageFile
+                .with(namespace: "posts", identifier: post.id.uuidString)
+                .putFile(from: imageFileURL)
+                .getDownlaodURL()
+        }
+        
         let document = postsReference.document(post.id.uuidString)
         try await document.setData(from: post)
     }
@@ -90,6 +69,8 @@ struct PostsRepository: PostsRepositoryProtocol {
         precondition(canDelete(post))
         let document = postsReference.document(post.id.uuidString)
         try await document.delete()
+        let image = post.imageURL.map(StorageFile.atURL(_:))
+        try await image?.delete()
     }
     
     func favorite(_ post: Post) async throws {
@@ -140,4 +121,29 @@ private extension Post {
     }
 }
 
-
+#if DEBUG
+struct PostsRepositoryStub: PostsRepositoryProtocol {
+    let state: Loadable<[Post]>
+    let user = User.testUser
+    
+    func fetchAllPosts() async throws -> [Post] {
+        return try await state.simulate()
+    }
+    
+    func fetchPosts(by author: User) async throws -> [Post] {
+        return try await state.simulate()
+    }
+    
+    func fetchFavoritePosts() async throws -> [Post] {
+        return try await state.simulate()
+    }
+    
+    func create(_ post: Post) async throws {}
+    
+    func delete(_ post: Post) async throws {}
+    
+    func favorite(_ post: Post) async throws {}
+    
+    func unfavorite(_ post: Post) async throws {}
+}
+#endif
