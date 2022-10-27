@@ -22,6 +22,7 @@ class ProfileViewModel: ObservableObject, StateManager {
     private let authService: AuthService
     
     init(user: User, authService: AuthService) {
+        print("[ProfileViewModel]  user.profileImageURL = \(user.profileImageURL) ")
         self.name = user.name
         self.profileImageURL = user.profileImageURL
         self.authService = authService
@@ -32,10 +33,10 @@ class ProfileViewModel: ObservableObject, StateManager {
     }
     
     private func profileImageURLDidChange(from oldValue: URL?) {
+        print("[ProfileViewModel]  oldValue = \(oldValue)")
         guard profileImageURL != oldValue else { return }
         withStateManagingTask { [self] in
             try await authService.updateProfileImage(to: profileImageURL)
-            
         }
     }
 }

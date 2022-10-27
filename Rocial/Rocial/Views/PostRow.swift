@@ -14,7 +14,7 @@ struct PostRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
-                
+                let _ = print("[PostRow] viewmodel.author = \(viewModel.author)")
                 AuthorView(author: viewModel.author)
                 Spacer()
                 Text(viewModel.timestamp.formatted(date: .abbreviated, time: .omitted))
@@ -71,10 +71,12 @@ private extension PostRow {
             } label: {
                 HStack {
                     ProfileImage(url: author.profileImageURL)
-                        .frame(width: 40, height: 40)
+                        .frame(width: 32, height: 32)
                     Text(author.name)
                         .font(.subheadline)
                         .fontWeight(.medium)
+                    
+                   let _ = print("[PostRow] authorprofile image url \(author.profileImageURL)")
                     
                 }
             }

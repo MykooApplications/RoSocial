@@ -10,7 +10,6 @@ import SwiftUI
 struct ProfileImage: View {
     let url: URL?
     
-    
     var body: some View {
         GeometryReader { proxy in
             AsyncImage(url: url) { image in

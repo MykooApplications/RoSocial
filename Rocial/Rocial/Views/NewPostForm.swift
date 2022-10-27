@@ -71,6 +71,7 @@ private extension NewPostForm {
                         .resizable()
                         .scaledToFit()
                         .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .scaleEffect((CGSize(width: 1.0, height: -1.0)))
                 } placeholder: {
                     EmptyView()
                 }
