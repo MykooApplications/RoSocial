@@ -70,7 +70,6 @@ private extension PostRow {
                 PostsList(viewModel: factory.makePostsViewModel(filter: .author(author)))
             } label: {
                 HStack {
-                let _ = print("[PostRow] profileImage url = \(author.profileImageURL)")
                     ProfileImage(url: author.profileImageURL)
                         .frame(width: 40, height: 40)
                     Text(author.name)
@@ -113,6 +112,7 @@ private extension PostRow {
                     .resizable()
                     .scaledToFit()
                     .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .scaleEffect((CGSize(width: 1.0, height: -1.0)))
             } placeholder: {
                 Color.clear
             }
