@@ -6,13 +6,13 @@
 //
 
 import Foundation
-
+     
 struct User: Identifiable, Equatable, Codable {
     var id: String
     var name: String
     var profileImageURL: URL?
     
-    
+    //THis is a test to see how the viewers can read my code on screen
     
 }
 
